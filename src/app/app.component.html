@@ -6,8 +6,8 @@
       </select>
       <div class="overSelect"></div>
     </div>
-    <div id="checkboxes" [style.display]="this.expanded === true ? 'block' : 'none'">
-      <div class="form-check" *ngFor="let country of this.countries" (click)="select(country);">
+    <div id="checkboxes" [style.display]="expanded === true ? 'block' : 'none'">
+      <div class="form-check" *ngFor="let country of countries" (click)="select(country);">
         <input class="form-check-input" type="checkbox" formControlName="{{country}}">
         <label class="form-check-label" for="{{country}}">
           {{country}}
@@ -16,14 +16,14 @@
     </div>
   </div>
 </form>
-<div class="d-flex mt-3" *ngIf="this.expanded">
+<div class="d-flex mt-3" *ngIf="expanded">
   <div class="align-self-start">
-    <ul class="list-group" *ngFor="let result of this.resultForm">
+    <ul class="list-group" *ngFor="let result of resultForm">
       <li class="list-group-item">{{result.name}}</li>
     </ul>
   </div>
   <div class="align-self-stretch">
-    <ul class="list-group" *ngFor="let result of this.resultForm">
+    <ul class="list-group" *ngFor="let result of resultForm">
       <li class="list-group-item">{{result.check}}</li>
     </ul>
   </div>
